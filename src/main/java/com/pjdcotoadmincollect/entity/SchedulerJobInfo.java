@@ -1,22 +1,30 @@
 package com.pjdcotoadmincollect.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "unit_job")
+@Table(name = "scheduler_job_info")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class UnitJob {
+public class SchedulerJobInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long unitId;
+    private Long jobId;
+    private String jobName;
+    private String jobGroup;
+    private String jobStatus;
+    private String jobClass;
+    private String description;
+    private String interfaceName;
+
 
 }

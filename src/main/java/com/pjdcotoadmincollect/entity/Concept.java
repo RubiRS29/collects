@@ -18,13 +18,14 @@ public class Concept {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long conceptId;
+    private Long id;
 
     @Column(nullable = false)
     private Long app_id;
 
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private OperationEnum operation;
 
 

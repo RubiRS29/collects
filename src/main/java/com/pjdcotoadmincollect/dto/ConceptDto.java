@@ -11,10 +11,9 @@ import lombok.*;
 @ToString
 public class ConceptDto {
 
+    private Long id;
     private Long app_id;
-
     private String description;
-
     private OperationEnum operation;
 
 }

@@ -1,26 +1,27 @@
 package com.pjdcotoadmincollect.dto;
 
-import com.pjdcotoadmincollect.entity.Concept;
-
-import com.pjdcotoadmincollect.entity.Cron;
+import com.pjdcotoadmincollect.entity.CronType;
 import lombok.*;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class JobDto {
+public class JobRequestDto implements Serializable {
 
-    private Long id;
     private Long appId;
-    private Concept concept;
+    private Long conceptId;
     private Double quantity;
-    private CronDto cron;
-    private String description;
+    private CronType cron;
     private Boolean isEnable;
+    private String description;
+    private String jobName;
     private List<UnitJobDto> unitJob;
 
 }

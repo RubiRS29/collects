@@ -6,13 +6,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface BalanceService {
 
     BalanceDto getBalanceById (Long id);
 
-    BalanceDto getBalanceByUnitId(Long balanceId);
+    BalanceDto getBalanceByUnitIdAndAppId(Long balanceId, Long appId);
 
-    List<BalanceDto> getAllBalances();
+    List<BalanceDto> getAllBalances(Long id);
 
 }

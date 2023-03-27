@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "job")
@@ -20,7 +21,7 @@ public class Job {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long balanceId;
+    private Long id;
 
     private Long appId;
 
@@ -30,11 +31,17 @@ public class Job {
 
     private Double quantity;
 
-    private Long cron;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
+    private Cron cron;
 
-    private LocalDateTime date;
+    private Boolean isEnable;
 
-    private String status;
+    private String description;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn
+    private List<UnitJob> unitJob;
 
     @CreationTimestamp
     @Column(name = "created_on")
@@ -43,7 +50,5 @@ public class Job {
     @UpdateTimestamp
     @Column(name = "updated_on", columnDefinition = "TIMESTAMP")
     private LocalDateTime updatedOn;
-
-
 
 }

@@ -1,10 +1,7 @@
 package com.pjdcotoadmincollect.dto;
 
+import com.pjdcotoadmincollect.entity.CronType;
 import lombok.*;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Getter
 @Setter
@@ -12,7 +9,8 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 public class CronDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    private CronType cron;
+    private String description;
+
 }
